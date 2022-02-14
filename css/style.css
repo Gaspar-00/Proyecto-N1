@@ -1,0 +1,689 @@
+/******************************************/
+/* HEADER */
+/******************************************/
+
+/* Cuando queramos una navegacion fija darle un ancho ya que sera mas facil trabajar con una altura fija */
+.header {
+  background-color: #fdf2e9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+
+  position: relative;
+}
+.logo {
+  /* ACA ROMPEMOS LA REGLA DEL SISTEMA DE ESPACIADO PORQ ESTA 
+  UN POCO GRANDE CON 2.4REM Y CON 1.6REM SERIA MUY PEQUEÑO
+  ASIQ ESTA BIEN ROMPER LA REGLA EN ESTA SITUACION */
+  height: 2.2rem;
+}
+
+/******************************************/
+/* NAVIGATION */
+/******************************************/
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #212529;
+  transition: all 0.3s;
+}
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+}
+.main-nav-link.nav-btn:link,      /* ACA USAMOS LA CLASE ANTERIOR PARA QUE TENGA MAS */
+.main-nav-link.nav-btn:visited {
+  /* ESPECIFICIDAD, SE PONEN SIN ESPACIO */
+  color: #fff;
+  background-color: #e67e22;
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+}
+.main-nav-link.nav-btn:hover,
+.main-nav-link.nav-btn:active {
+  background-color: #cf711f;
+}
+
+.btn-mobile-nav {
+  border: none;
+  background: none;
+}
+.btn-mobile-nav .nav-icon {
+  height: 4.4rem;
+  width: 4.4rem;
+  color: #333;
+}
+.btn-mobile-nav {
+  display: none;
+}
+.nav-icon[name="close-outline"] {
+  display: none;
+}
+
+/* STICKY NAVIGATION */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+/******************************************/
+/* HERO SECTION */
+/******************************************/
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+.hero {
+  /* margin: 0 2rem; */
+  max-width: 135rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 9.6rem;
+}
+
+.hero-text-box {
+  margin: 3rem;
+  margin-right: 0;
+}
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.delivered-meals {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+.delivered-imgs {
+  flex-basis: 50%;
+}
+.delivered-imgs img {
+  height: 4.4rem;
+  width: 4.4rem;
+  border-radius: 100%;
+  border: #fdf2e9 solid 3px;
+  margin-right: -2rem;
+}
+.delivered-imgs img:last-child {
+  margin-right: 0;
+}
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+/* .delivered-imgs img:last-child{ "EN VEZ DE HACER ESTO USAR GAP EN EL ELEMENTO PADRE"
+  margin-right: 2rem;
+} */
+/* .text-style{    "Aca no aria falta una clase para el elemento span,
+  color: #cf711f;  para simplificarlo mas usar la etiqueta como aca abajo"
+} */
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
+}
+
+.hero-img {
+  /* width: 55rem;
+  height: 55rem; */
+  width: 100%;
+}
+
+/******************************************/
+/* FEATURED IN SECTION */
+/******************************************/
+
+.section-featured {
+  padding: 4.6rem 0 3.2rem 0;
+}
+
+.heading-featured-in {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.75px;
+  color: #868e96;
+  margin-bottom: 2.4rem;
+}
+.logos-box {
+  display: flex;
+  justify-content: space-around;
+}
+/* ver el video de css de dalto q aparecen los filtros y despues explicar */
+.logos-box img {
+  height: 3.2rem;
+  filter: brightness(0);
+  opacity: 50%;
+}
+
+/******************************************/
+/* HOW IT WORKS SECTION */
+/******************************************/
+
+.section-how {
+  padding: 9.6rem 0;
+}
+
+.subheading {
+  display: inline-block;
+  color: #cf711f;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  margin-bottom: 1.6rem;
+}
+
+/* Esta es una forma de alinear el texto 
+pero hay otra mas facil y aprovechamos css grid
+aunq aca no funcionaria porq no son hijos
+directos, mirar el video How it works section
+parte 2 min: 14:26
+ */
+.step-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.step-number {
+  display: inline-block;
+  color: #dee2e6;
+  font-size: 8rem;
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+}
+.step-description {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.step-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.step-img-box::before {
+  z-index: -2;
+  /* height: 60%; 
+  Usar padding para darle altura ya q por alguna
+  razon el height no agarra bien la altura y se
+  queda mas corto o a veces tendra 0 altura aunq
+  le pongamos el height con un valor*/
+  padding-bottom: 60%;
+  width: 60%;
+  background-color: #fdf2e9;
+}
+.step-img-box::after {
+  z-index: -1;
+  width: 45%;
+  padding-bottom: 45%;
+  background-color: #fae5d3;
+}
+.step-img {
+  width: 35%;
+}
+
+/******************************************/
+/* MEALS SECTION */
+/******************************************/
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal {
+  border-radius: 11px;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.meal:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.1);
+}
+.meal-img {
+  width: 100%;
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 10px; */
+}
+
+.meal-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+}
+.tag {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  color: #212529;
+  border-radius: 100px;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 1.2rem;
+}
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+.tag--vegan {
+  background-color: #94d82d;
+}
+.tag--paleo {
+  background-color: #ffd43b;
+}
+
+.meal-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 3.2rem;
+}
+.meal-attributes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  list-style: none;
+}
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.ionicon {
+  color: #e67e22;
+  font-size: 2.5rem;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.list-icon {
+  color: #e67e22;
+  height: 3rem;
+  width: 3rem;
+}
+
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/******************************************/
+/* TESTIMONIALS SECTION */
+/******************************************/
+
+.section-testimonials {
+  background-color: #fdf2e9;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  /* Aca ocurre algo raro si sacamos esta propiedad se crea espacio
+  en blanco en las imagenes, y con esto lo arreglamos nose porq */
+  align-items: center;
+}
+
+.testimonials-container {
+  padding: 9.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.6rem;
+
+  padding: 1.6rem;
+}
+.gallery-items {
+  overflow: hidden;
+}
+
+.gallery img {
+  /* usamos esto porq las imagenes tienen un pequeño margen abajo
+  esto es porq las imagenes son elementos en linea, haciendolas
+  en bloque lo arreglamos */
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.gallery-items img:hover {
+  transform: scale(1.1);
+}
+
+/******************************************/
+/* PRICING SECTION */
+/******************************************/
+
+.section-pricing {
+  padding: 9.6rem 0;
+}
+.pricing-plan {
+  border-radius: 11px;
+  width: 75%;
+  line-height: 1.2;
+}
+
+/* tienen diferente padding porq en la primera caja al agregar el borde el boto
+se va un poco hacia abajo, entonces para arreglaro le ponemos menos padding.
+Nose porq no se lo bajamos al padding top nomas lo comprobe y queda bien de las
+2 maneras */
+.pricing-plan--starter {
+  justify-self: end;
+  border: 2px solid #fdf2e9;
+  padding: 4.6rem;
+}
+.pricing-plan--complete {
+  background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-plan--complete::after {
+  content: "Best Value";
+  position: absolute;
+  top: 6%;
+  right: -19%;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #ffd43b;
+  color: #333;
+
+  transform: rotate(45deg);
+
+  padding: 0.8rem 8rem;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+.plan-name {
+  color: #cf711f;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.75px;
+  margin-bottom: 3.2rem;
+}
+
+.plan-price {
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+.plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  padding-right: 1rem;
+}
+
+.plan-text {
+  font-size: 1.6rem;
+  /* esto aveces lo necesitamos porq cuando la pagina es encoje este text
+  pasa a tener varias lineas y estas estan muy juntas */
+  line-height: 1.6;
+  color: #6f6f6f;
+}
+
+/* en vez de crear una caja para alinear al boton al centro la ei otra clase
+ y tuve q usar position porq de otra forma no me dejaba llevar al centro */
+
+/* .btn.btn-primary.btn-primary--v3{
+  position: relative;
+  left: 25%;
+} */
+
+/* Aca si cree una caja */
+
+.plan-sing-up {
+  text-align: center;
+  margin-top: 4.8rem;
+}
+
+.plan-details {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/*******************/
+/* FEATURE ARTICLE */
+/*******************/
+
+.feature-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  padding: 1.6rem;
+  background-color: #fdf2e9;
+  color: #e67e22;
+  border-radius: 50%;
+
+  margin-bottom: 3.2rem;
+}
+.feature-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/******************************************/
+/* CTA SECTION */
+/******************************************/
+
+.section-cta {
+  padding-bottom: 12.8rem;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+  overflow: hidden;
+}
+
+.cta-text-box {
+  color: #45260a;
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+}
+
+.cta .heading-secondary {
+  /* color: #45260a; */
+  /* con esta propiedad decimos q herede el font-family del padre */
+  font-family: inherit;
+
+  margin-bottom: 3.2rem;
+}
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.cta-form {
+  display: grid;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      hsla(28, 80%, 61%, 0.3),
+      hsla(28, 80%, 52%, 0.3)
+    ),
+    url(../img/eating.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.input {
+  /* padding: 1.4rem 12.8rem 1.4rem 1.2rem; */
+  width: 100%;
+  padding: 1.2rem;
+
+  font-size: 1.8rem;
+  /* por alguna razon lo q hay dentro del input no hereda nada
+  entonces usamos inherit para q herede del elemento padre el tipo de letra */
+  font-family: inherit;
+  background-color: #fdf2e9;
+  color: inherit;
+  border: none;
+  border-radius: 9px;
+}
+.input::placeholder {
+  color: #aaa;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+
+  /* aca el boton se ve mas grande q los demas input para arreglarlo le
+  ponemos el mismo padding ya q en la clase boton tiene mas */
+  padding: 1.2rem;
+}
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
+
+/******************************************/
+/* FOOTER  */
+/******************************************/
+
+.footer {
+  padding: 9.6rem 0;
+}
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.footer-link-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+.social-links {
+  margin-bottom: 6.4rem;
+  display: flex;
+  gap: 2.4rem;
+}
+.social-links li {
+  list-style: none;
+}
+.social-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #868e96;
+}
+
+.logo-col p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.footer-heading {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.contacts p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+.footer-link:link,
+.adress-col a:link,
+.footer-link:visited,
+.adress-col a:visited {
+  text-decoration: none;
+  color: #555;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+.footer-nav li {
+  list-style: none;
+  font-size: 1.6rem;
+}
